@@ -14,7 +14,7 @@
 <body>
 <h1 class="text-center">Shoe Calculator</h1>
 <div class="container mt-5">
-    <input type="text" class="form-control field" id="f-1" placeholder="Bata(5-11)"  onkeyup="myFunction()"><br>
+    <input type="text" class="form-control field" id="f-1" placeholder="Bata(5-11)"><br>
     <input type="text" class="form-control field" id="f-2" placeholder="Inch" onkeyup="myFunction()"><br>
     <input type="text" class="form-control field" id="f-3" placeholder="CM" onkeyup="myFunction()"><br>
     <input type="text" class="form-control field" id="f-4" placeholder="EU(38-45)" onkeyup="myFunction()"><br>
@@ -22,35 +22,145 @@
     <input type="text" class="form-control field" id="f-6" placeholder="US(5.5-11.5)" onkeyup="myFunction()"><br>
     <input type="text" class="form-control field" id="result" placeholder="Foot Length Result" onkeyup="myFunction()"><br>
 </div>
-<div>
-    <input type="text" id="demo">
-</div>
 
 <!-- script -->
 <script>
-    document.getElementsByClassName("demo").value ="sasa";
-function myFunction() {
-  var x = document.getElementsByClassName("field");
-
-    var f1 = document.getElementById("f-1").value;
-    var f2 = document.getElementById("f-2").value;
-    var f3 = document.getElementById("f-3").value;
-    var f4 = document.getElementById("f-4").value;
-    var f5 = document.getElementById("f-5").value;
-    var f6 = document.getElementById("f-6").value;
-
-if(f1 == null){
-    document.getElementsByClassName("demo").value ="sasa";
+    document.getElementById("f-1").onkeyup = f1Field;
+    document.getElementById("f-2").onkeyup = f2Field;
+    
+function f1Field() {
+        var f1 = document.getElementById("f-1").value;
+        var f2 = document.getElementById("f-2");
+        var f3 = document.getElementById("f-3");
+        var f4 = document.getElementById("f-4");
+        var f5 = document.getElementById("f-5");
+        var f6 = document.getElementById("f-6");
+        if(f1 == ""){
+                f2.value ="";
+                f3.value ="";
+                f4.value ="";
+                f5.value ="";
+                f6.value ="";
+    }
+        switch(f1){
+            case "5":
+                f2.value =10;
+                f3.value =24.5;
+                f4.value =38;
+                f5.value =5;
+                f6.value =5.5;
+                break;
+            case "6":
+                f2.value = "10 1/4";
+                f3.value =25.1;
+                f4.value ="39/40";
+                f5.value =6;
+                f6.value =6.5;
+                break;
+            case "7":
+                f2.value = "10 1/8";
+                f3.value =25.7;
+                f4.value =41;
+                f5.value =7;
+                f6.value =7.5;
+                break;
+            case "8":
+                f2.value = 11;
+                f3.value =26.3;
+                f4.value =42;
+                f5.value =8;
+                f6.value =8.5;
+                break;
+            case "9":
+                f2.value = "11 1/4";
+                f3.value =26.9;
+                f4.value =43;
+                f5.value =9;
+                f6.value =9.5;
+                break;
+            case "10":
+                f2.value = "11 5/8";
+                f3.value =27.5;
+                f4.value =44;
+                f5.value =10;
+                f6.value =10.5;
+                break;
+            case "11":
+                f2.value = 12;
+                f3.value =28.1;
+                f4.value =45;
+                f5.value =11;
+                f6.value =11.5;
+                break;
+        }
 }
-// reset();
-  var i;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.backgroundColor = "red";
-  }
+function f2Field() {
+        var f1 = document.getElementById("f-1");
+        var f2 = document.getElementById("f-2").value;
+        var f3 = document.getElementById("f-3");
+        var f4 = document.getElementById("f-4");
+        var f5 = document.getElementById("f-5");
+        var f6 = document.getElementById("f-6");
+        if(f2 == ""){
+                f1.value ="";
+                f3.value ="";
+                f4.value ="";
+                f5.value ="";
+                f6.value ="";
+    }
+        switch(f2){
+            case "5":
+                f1.value =10;
+                f3.value =24.5;
+                f4.value =38;
+                f5.value =5;
+                f6.value =5.5;
+                break;
+            case "6":
+                f1.value = "10 1/4";
+                f3.value =25.1;
+                f4.value ="39/40";
+                f5.value =6;
+                f6.value =6.5;
+                break;
+            case "7":
+                f1.value = "10 1/8";
+                f3.value =25.7;
+                f4.value =41;
+                f5.value =7;
+                f6.value =7.5;
+                break;
+            case "8":
+                f1.value = 11;
+                f3.value =26.3;
+                f4.value =42;
+                f5.value =8;
+                f6.value =8.5;
+                break;
+            case "9":
+                f1.value = "11 1/4";
+                f3.value =26.9;
+                f4.value =43;
+                f5.value =9;
+                f6.value =9.5;
+                break;
+            case "10":
+                f1.value = "11 5/8";
+                f3.value =27.5;
+                f4.value =44;
+                f5.value =10;
+                f6.value =10.5;
+                break;
+            case "11":
+                f1.value = 12;
+                f3.value =28.1;
+                f4.value =45;
+                f5.value =11;
+                f6.value =11.5;
+                break;
+        }
 }
 
-</script>
-    <!--JS File  -->
-    <script src="custom.js"></script>
+
 </body>
 </html>
